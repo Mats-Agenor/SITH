@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sith-splus"
+version = "2.0.0"
+description = "SITH (S-PLUS Integrated Tool for Homogeneous Photometry)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "GPL-3.0-or-later"}
+authors = [{name = "M. Agenor"}]
+dependencies = [
+  "numpy>=1.24",
+  "astropy>=5.3",
+  "astropy-healpix>=1.0",
+  "scipy>=1.10",
+  "scikit-learn>=1.2",
+  "matplotlib>=3.7"
+]
+
+[project.scripts]
+sith = "sith.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sith*"]
+
+[tool.setuptools.package-data]
+sith = ["resources/*", "external/*"]

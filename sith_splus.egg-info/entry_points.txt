@@ -1,0 +1,2 @@
+[console_scripts]
+sith = sith.cli:main
